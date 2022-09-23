@@ -29,12 +29,21 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
             throws ServletException, IOException {
         String first = request.getParameter("firstNum");
         String sec = request.getParameter("secNum");
-
+        String wrongResult = "invalid";
+        
+        if (first == null || first.equals("") || sec == null || sec.equals("") || first.contains("[a-aZ-Z]") || sec.contains("[a-aZ-Z]") || first.contains("[a-aZ-Z]") && sec.contains("[a-aZ-Z]")) {
+            request.setAttribute("wrongResult", wrongResult);
+            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
+                        .forward(request, response);
+            return;
+        }
+        
         String buttonChoice = request.getParameter("button");
         int firstNum = Integer.parseInt(first);
         int secNum = Integer.parseInt(sec);
         int result = 0;
-
+        
+        
         switch (buttonChoice) {
             case "+":
                 result = firstNum + secNum;
