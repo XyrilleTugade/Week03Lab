@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Arithmetic Calculator</h1>
-        <form>
+        <form method="post" action="arithmetic">
             First: <input type="text" name="firstNum"><br>
             Second: <input type="text" name="secNum"><br>
             <input type="submit" value="+">
@@ -21,5 +21,6 @@
             <input type="submit" value="*">
             <input type="submit" value="%">
         </form>
+        <a href="agecalculator.jsp">Age Calculator</a>
     </body>
 </html>
