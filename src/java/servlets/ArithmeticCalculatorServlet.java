@@ -20,14 +20,51 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
+                .forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String firstNum = request.getParameter("firstNum");
-        String secNum = request.getParameter("secNum");
+        String first = request.getParameter("firstNum");
+        String sec = request.getParameter("secNum");
+
+        String buttonChoice = request.getParameter("button");
+        int firstNum = Integer.parseInt(first);
+        int secNum = Integer.parseInt(sec);
+        int result = 0;
+
+        switch (buttonChoice) {
+            case "+":
+                result = firstNum + secNum;
+                request.setAttribute("result", result);
+                getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
+                        .forward(request, response);
+                break;
+                
+            case "-":
+                result = firstNum - secNum;
+                request.setAttribute("result", result);
+                getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
+                        .forward(request, response);
+                break;
+            
+            case "*":
+                result = firstNum * secNum;
+                request.setAttribute("result", result);
+                getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
+                        .forward(request, response);
+                break;
+                
+            case "%":
+                result = firstNum / secNum;
+                request.setAttribute("result", result);
+                getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
+                        .forward(request, response);
+                break;
+        }
+
     }
 
 }
