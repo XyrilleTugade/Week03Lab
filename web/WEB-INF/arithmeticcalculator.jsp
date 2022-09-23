@@ -12,6 +12,14 @@
         <title>Arithmetic Calculator</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Arithmetic Calculator</h1>
+        <form>
+            First: <input type="text" name="firstNum"><br>
+            Second: <input type="text" name="secNum"><br>
+            <input type="submit" value="+">
+            <input type="submit" value="-">
+            <input type="submit" value="*">
+            <input type="submit" value="%">
+        </form>
     </body>
 </html>
