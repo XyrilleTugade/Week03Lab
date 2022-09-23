@@ -21,6 +21,6 @@
             <input type="submit" value="*">
             <input type="submit" value="%">
         </form>
-        <a href="agecalculator.jsp">Age Calculator</a>
+        <a href="age">Age Calculator</a>
     </body>
 </html>
